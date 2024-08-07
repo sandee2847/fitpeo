@@ -1,0 +1,83 @@
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* Allows horizontal scroll if needed */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #f4f4f4;
+}
+
+th {
+  color: #f4f4f4;
+}
+
+.order-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.status {
+  padding: 2px;
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+}
+
+.status.delivered {
+  background-color: #4caf50; /* Green for Delivered */
+}
+
+.status.cancelled {
+  background-color: #f44336; /* Red for Cancelled */
+}
+
+.status.pending {
+  background-color: #ff9800; /* Orange for Pending */
+}
+
+@media screen and (max-width: 768px) {
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  td {
+    display: block;
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+    white-space: nowrap;
+    border: none;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 10px;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
+  }
+}
